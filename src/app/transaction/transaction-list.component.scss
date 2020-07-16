@@ -1,0 +1,18 @@
+$animation-duration: .1s;
+
+.btn-group {
+  padding-bottom: 1em;
+}
+
+tr {
+  & td:not(:first-of-type) {
+    -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+    -webkit-transition: all $animation-duration ease-in-out;
+  }
+
+  &:hover td{
+    filter: none;
+    -webkit-filter: grayscale(0);
+    -webkit-transform: scale(1.01);
+  }
+}

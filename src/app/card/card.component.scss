@@ -1,0 +1,18 @@
+@import "src/variables";
+$padding: 1em;
+
+.app-card {
+  display: block;
+  width: 100%;
+  background-color: $background-color;
+
+  .app-card-header {
+    padding: $padding;
+    background-color: $highlights;
+  }
+
+  .app-card-content{
+
+    padding: $padding;
+  }
+}
