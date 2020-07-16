@@ -7,12 +7,14 @@
   </div>
   <div class="form-group">
     <label for="toAccount">To Account</label>
-    <input type="text" class="form-control" id="toAccount" placeholder="Enter destination" [(ngModel)]="toAccount" name="toAccount">
+    <input type="text" class="form-control" id="toAccount" placeholder="Enter destination" [(ngModel)]="toAccount"
+           name="toAccount">
   </div>
   <div class="form-group">
     <label class="amount-label" for="amount">Amount</label>
     <div class="input-icon">
-      <i>$</i><input type="text" class="form-control" id="amount" placeholder="0.00" [(ngModel)]="amount" name="amount">
+      <i>$</i><input type="text" class="form-control" id="amount" placeholder="0.00" [(ngModel)]="amount" name="amount"
+                     ngNumbersOnly>
     </div>
   </div>
   <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="open()">Transfer</button>

@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
+import {Injectable, OnDestroy} from '@angular/core';
 
 import {BehaviorSubject, Observable, of, Subject, Subscription} from 'rxjs';
+import {delay, switchMap, tap} from 'rxjs/operators';
 
 import {Transaction} from '../models/transaction';
 import {TransactionsMockData} from '../components/transaction/transactions-mock-data';
 import {DecimalPipe} from '@angular/common';
-import {delay, switchMap, tap} from 'rxjs/operators';
 import {SortColumn, SortDirection} from '../components/transaction/sortable.directive';
 import {sort, matches} from '../components/transaction/sort.utilities';
 
@@ -22,7 +22,7 @@ interface State {
 }
 
 @Injectable({providedIn: 'root'})
-export class TransactionService {
+export class TransactionService implements OnDestroy{
   private _loading$ = new BehaviorSubject<boolean>(true);
   private _search$ = new Subject<void>();
   private _transactions$ = new BehaviorSubject<Transaction[]>([]);
@@ -42,13 +42,11 @@ export class TransactionService {
 
     this._searchSubscription = this._search$.pipe(
       tap(() => this._loading$.next(true)),
-      // debounceTime(200),
       switchMap(() => this._search()),
       delay(200),
       tap(() => this._loading$.next(false))
     ).subscribe(result => {
       this._transactions$.next(result.transactions);
-
     });
 
     this._search$.next();
@@ -91,7 +89,6 @@ export class TransactionService {
 
     return of({transactions});
   }
-
 
   public add(transaction) {
     this.transactions.push(transaction);

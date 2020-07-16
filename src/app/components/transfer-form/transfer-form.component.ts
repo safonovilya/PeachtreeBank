@@ -48,6 +48,8 @@ export class TransferFormComponent implements OnInit {
     });
     this.balance -= this.amount;
     // clear form
+    this.toAccount = '';
+    this.amount = 0
   }
 
   cancel() {
