@@ -22,6 +22,63 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## App Structure
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+├── LICENSE
+├── README.md
+├── angular.json                                // angular configs to serv, build, test
+├── e2e                                         // e2e test init folder
+│   ├── protractor.conf.js
+│   ├── src
+│   │   ├── app.e2e-spec.ts
+│   │   └── app.po.ts
+│   └── tsconfig.json
+├── karma.conf.js                               // karma test config
+├── messages.xlf                                // i18n
+├── ngsw-config.json                            // offline mode 
+├── package-lock.json
+├── package.json
+├── server.js                                   // express server for heroku serve static
+├── src
+│   ├── app
+│   │   ├── app-routing.module.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.component.spec.ts
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   │   ├── components                          // components folder
+│   │   │   ├── card
+│   │   │   │   ├── ...
+│   │   │   │   └── card.component.ts
+│   │   │   ├── modal
+│   │   │   │   ├── ...
+│   │   │   │   └── modal.component.ts
+│   │   │   ├── transaction
+│   │   │   │   ├── ...
+│   │   │   │   └── transactions.componen.ts
+│   │   │   └── transfer-form
+│   │   │       ├── ...
+│   │   │       └── transfer-form.component.ts
+│   │   ├── directives
+│   │   │   ├── ...
+│   │   │   └── number-only.directive.ts
+│   │   ├── models
+│   │   │   └── transaction.ts
+│   │   └── services
+│   │       └── transaction.service.ts
+│   ├── assets
+│   │   ├── ...
+│   │   └── logo.jpg
+│   ├── environments                            // configs variables
+│   │   ├── environment.prod.ts
+│   │   └── environment.ts
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── main.ts
+│   ├── manifest.webmanifest 
+│   ├── polyfills.ts
+│   ├── styles.scss
+│   ├── test.ts
+│   └── variables.scss                          // scss variables
+└── tslint.json                                 // code styling config
