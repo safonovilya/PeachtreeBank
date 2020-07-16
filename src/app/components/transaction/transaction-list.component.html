@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-between align-items-center">
+<div class="d-flex justify-content-between align-items-center mb-2">
   <div class="form-inline">
     <input
       autocomplete="false"
@@ -10,12 +10,15 @@
     />
     <span class="ml-3" *ngIf="transactionService.loading$ | async">Loading...</span>
   </div>
-  <div class="btn-group" role="group" aria-label="Sort by">
-    <button type="button" class="btn btn-outline-secondary rounded-0" sortable="transactionDate" (sort)="onSort($event)">Date
+  <div role="group" aria-label="Sort by">
+    <button type="button" class="btn btn-outline-secondary rounded-0" sortable="transactionDate"
+            (sort)="onSort($event)">Date
     </button>
-    <button type="button" class="btn btn-outline-secondary rounded-0" sortable="merchant" (sort)="onSort($event)">Beneficiary
+    <button type="button" class="btn btn-outline-secondary rounded-0" sortable="merchant" (sort)="onSort($event)">
+      Beneficiary
     </button>
-    <button type="button" class="btn btn-outline-secondary rounded-0" sortable="amount" (sort)="onSort($event)">Amount</button>
+    <button type="button" class="btn btn-outline-secondary rounded-0" sortable="amount" (sort)="onSort($event)">Amount
+    </button>
   </div>
 </div>
 <table class="table">

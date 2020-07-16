@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 
-import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
+import {BehaviorSubject, Observable, of, Subject, Subscription} from 'rxjs';
 
 import {Transaction} from '../models/transaction';
-import {TRANSACTIONS} from '../components/transaction/transactions';
+import {TransactionsMockData} from '../components/transaction/transactions-mock-data';
 import {DecimalPipe} from '@angular/common';
 import {delay, switchMap, tap} from 'rxjs/operators';
 import {SortColumn, SortDirection} from '../components/transaction/sortable.directive';
@@ -27,6 +27,7 @@ export class TransactionService {
   private _search$ = new Subject<void>();
   private _transactions$ = new BehaviorSubject<Transaction[]>([]);
   private readonly transactions = [];
+  private _searchSubscription: Subscription;
 
   private _state: State = {
     searchTerm: '',
@@ -37,9 +38,9 @@ export class TransactionService {
 
   constructor(private pipe: DecimalPipe) {
 
-    this.transactions = TRANSACTIONS; // mock
+    this.transactions = TransactionsMockData; // mock
 
-    this._search$.pipe(
+    this._searchSubscription = this._search$.pipe(
       tap(() => this._loading$.next(true)),
       // debounceTime(200),
       switchMap(() => this._search()),
@@ -96,5 +97,9 @@ export class TransactionService {
     this.transactions.push(transaction);
     this._transactions$.next(this.transactions);
     this._search$.next();
+  }
+
+  ngOnDestroy() {
+    this._searchSubscription.unsubscribe();
   }
 }

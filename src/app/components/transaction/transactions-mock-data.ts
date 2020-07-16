@@ -1,6 +1,6 @@
 import {Transaction} from '../../models/transaction';
 
-export const TRANSACTIONS: Transaction[] = [
+export const TransactionsMockData: Transaction[] = [
   {
     "amount": "82.02",
     "categoryCode": "#12a580",
