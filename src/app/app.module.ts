@@ -3,15 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TransferFormComponent } from './transfer-form/transfer-form.component';
-import { TransactionTableComponent } from './transaction/transaction-list.component';
-import { SortableBnts } from './transaction/sortable.directive'
-import { TransactionService } from './transaction/transaction.service';
+import { TransferFormComponent } from './components/transfer-form/transfer-form.component';
+import { TransactionTableComponent } from './components/transaction/transaction-list.component';
+import { SortableBnts } from './components/transaction/sortable.directive'
+import { TransactionService } from './services/transaction.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CardComponent } from './card/card.component';
-import { ModalComponent } from './modal/modal.component';
+import { CardComponent } from './components/card/card.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ModalComponent} from "../modal/modal.component";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {TransactionService} from "../transaction/transaction.service";
+import {TransactionService} from "../../services/transaction.service";
 import {DecimalPipe} from "@angular/common";
 
 @Component({

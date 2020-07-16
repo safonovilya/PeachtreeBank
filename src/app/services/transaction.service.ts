@@ -2,12 +2,12 @@ import {Injectable} from '@angular/core';
 
 import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
 
-import {Transaction} from './transaction';
-import {TRANSACTIONS} from './transactions';
+import {Transaction} from '../models/transaction';
+import {TRANSACTIONS} from '../components/transaction/transactions';
 import {DecimalPipe} from '@angular/common';
 import {delay, switchMap, tap} from 'rxjs/operators';
-import {SortColumn, SortDirection} from './sortable.directive';
-import {sort, matches} from './sort.utilities';
+import {SortColumn, SortDirection} from '../components/transaction/sortable.directive';
+import {sort, matches} from '../components/transaction/sort.utilities';
 
 interface SearchResult {
   transactions: Transaction[];

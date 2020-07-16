@@ -1,4 +1,4 @@
-import {Transaction} from "./transaction";
+import {Transaction} from "../../models/transaction";
 import {SortColumn} from "./sortable.directive";
 import {PipeTransform} from "@angular/core";
 

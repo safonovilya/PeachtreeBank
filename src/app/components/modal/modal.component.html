@@ -1,0 +1,28 @@
+<div class="modal-header">
+  <h4 class="modal-title">Preview</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('cansel')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+
+  <div class="form-group">
+    <label for="fromAccount">From Account</label>
+    <input disabled type="text" class="form-control" id="fromAccount" aria-describedby="fromAccountHelp"
+           value="{{accountName}}">
+  </div>
+  <div class="form-group">
+    <label for="toAccount">To Account</label>
+    <input disabled type="text" class="form-control" id="toAccount" name="toAccount" value="{{toAccount}}">
+  </div>
+  <div class="form-group">
+    <label class="amount-label" for="amount">Amount</label>
+    <div class="input-icon">
+      <input disabled type="text" class="form-control" id="amount"  name="amount" value="{{amount | currency}}">
+    </div>
+  </div>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">submit</button>
+</div>

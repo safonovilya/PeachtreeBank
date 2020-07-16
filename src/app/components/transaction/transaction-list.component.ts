@@ -2,8 +2,8 @@ import {DecimalPipe} from '@angular/common';
 import {Component, QueryList, ViewChildren} from '@angular/core';
 
 import { SortableBnts, SortEvent } from './sortable.directive';
-import { TransactionService } from './transaction.service'
-import { Transaction } from "./transaction";
+import { TransactionService } from '../../services/transaction.service'
+import { Transaction } from "../../models/transaction";
 import {Observable} from "rxjs";
 
 @Component({
