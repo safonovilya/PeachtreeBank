@@ -14,7 +14,7 @@
     <label class="amount-label" for="amount">Amount</label>
     <div class="input-icon">
       <i>$</i><input type="text" class="form-control" id="amount" placeholder="0.00" [(ngModel)]="amount" name="amount"
-                     ngNumbersOnly>
+                     ngNumbersOnly max="{{balance + 500}}">
     </div>
   </div>
   <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="open()">Transfer</button>
