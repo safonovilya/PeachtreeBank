@@ -5,7 +5,6 @@ $font-size: 16px;
 
 .sort-button-container {
 
-
   button {
     padding-right: 16px;
     padding-left: 16px;
@@ -45,7 +44,7 @@ input{
 
 tr {
   & td:not(:first-of-type) {
-    -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+    -webkit-filter: grayscale(1);
     -webkit-transition: all $animation-duration ease-in-out;
   }
 
