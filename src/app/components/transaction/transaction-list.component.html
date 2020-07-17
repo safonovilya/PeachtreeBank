@@ -1,22 +1,22 @@
-<div class="d-flex justify-content-between align-items-center mb-2">
-  <div class="form-inline">
+<div class="d-flex justify-content-between align-items-center flex-wrap">
+  <div class="form-inline mb-2 flex-grow-1">
     <input
       autocomplete="false"
-      class="form-control ml-2"
+      class="form-control flex-grow-1"
       type="text"
       name="searchTerm"
       [(ngModel)]="transactionService.searchTerm"
       placeholder="Search by typing..."
     />
-    <!--<span class="ml-3" *ngIf="transactionService.loading$ | async">
-      <div class="ball-loader">
+    <span class="loader-container" >
+      <div class="ball-loader" *ngIf="transactionService.loading$ | async">
         <div class="ball-loader-ball ball1"></div>
         <div class="ball-loader-ball ball2"></div>
         <div class="ball-loader-ball ball3"></div>
       </div>
-    </span>-->
+    </span>
   </div>
-  <div role="group" aria-label="Sort by" class="sort-button-container">
+  <div role="group" aria-label="Sort by" class="sort-button-container mb-2">
     <button type="button" class="btn btn-outline-secondary rounded-0" sortable="transactionDate"
             (sort)="onSort($event)">Date
     </button>

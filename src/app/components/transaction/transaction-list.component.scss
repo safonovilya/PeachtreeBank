@@ -5,10 +5,12 @@ $font-size: 16px;
 
 .sort-button-container {
 
+
   button {
     padding-right: 16px;
     padding-left: 16px;
     position: relative;
+    border-color: $border-color;
     &.asc, &.desc {
 
       padding-left: 10px;
@@ -28,6 +30,17 @@ $font-size: 16px;
     }
   }
 }
+.loader-container{
+  width: 20px;
+  margin: 0 10px;
+}
+
+input{
+  border: 0;
+  border-bottom: 1px solid $border-color;
+  border-radius: 0;
+}
+
 @include ball-loader(20px, $secondary);
 
 tr {

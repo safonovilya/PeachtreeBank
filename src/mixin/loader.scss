@@ -5,7 +5,6 @@
     width: $width + 0px;
     height: ($width / 3) ;
     position: relative;
-    transform: translateX(-50%) translateY(-50%);
   }
   .ball-loader-ball{
     will-change: transform;
@@ -14,7 +13,7 @@
     border-radius: 50%;
     background-color: $color;
     position: absolute;
-    animation: grow 1s ease-in-out infinite alternate;
+    animation: grow 0.2s ease-in-out infinite alternate;
 
 
     &.ball1{
