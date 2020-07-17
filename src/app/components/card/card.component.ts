@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {SortColumn} from "../transaction/sortable.directive";
 
 @Component({
   selector: 'app-card',

@@ -6,7 +6,7 @@ import {delay, switchMap, tap} from 'rxjs/operators';
 import {Transaction} from '../models/transaction';
 import {TransactionsMockData} from '../components/transaction/transactions-mock-data';
 import {DecimalPipe} from '@angular/common';
-import {SortColumn, SortDirection} from '../components/transaction/sortable.directive';
+import {SortColumn, SortDirection} from '../directives/sortable.directive';
 import {sort, matches} from '../components/transaction/sort.utilities';
 
 interface SearchResult {
@@ -61,6 +61,9 @@ export class TransactionService implements OnDestroy{
   get searchTerm() {
     return this._state.searchTerm;
   }
+  get lastUpdate() {
+    return this._state.lastUpdate;
+  }
   set searchTerm(searchTerm: string) {
     this._set({searchTerm});
   }
@@ -74,7 +77,6 @@ export class TransactionService implements OnDestroy{
 
   private _set(patch: Partial<State>) {
     Object.assign(this._state, patch);
-    console.log(this._state);
     this._search$.next();
   }
 

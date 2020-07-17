@@ -1,5 +1,5 @@
 import {Transaction} from "../../models/transaction";
-import {SortColumn} from "./sortable.directive";
+import {SortColumn} from "../../directives/sortable.directive";
 import {PipeTransform} from "@angular/core";
 
 export const compare = (v1: string | number, v2: string | number) => v1 < v2 ? -1 : v1 > v2 ? 1 : 0;

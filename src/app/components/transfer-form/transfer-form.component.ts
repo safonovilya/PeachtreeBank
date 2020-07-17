@@ -7,8 +7,7 @@ import {DecimalPipe} from "@angular/common";
 @Component({
   selector: 'app-transfer-form',
   templateUrl: './transfer-form.component.html',
-  styleUrls: ['./transfer-form.component.scss'],
-  providers: [TransactionService, DecimalPipe]
+  styleUrls: ['./transfer-form.component.scss']
 })
 export class TransferFormComponent implements OnInit {
   public accountName: string;
@@ -16,7 +15,7 @@ export class TransferFormComponent implements OnInit {
   public amount: number;
   public toAccount: string;
 
-  constructor(private modalService: NgbModal, private transactionService: TransactionService) {
+  constructor(private modalService: NgbModal, public transactionService: TransactionService) {
     this.accountName = 'Free checking(4692)';
     this.balance = 5824.76;
     this.toAccount = '';
@@ -47,7 +46,6 @@ export class TransferFormComponent implements OnInit {
       transactionType: 'Transaction'
     });
     this.balance -= this.amount;
-    // clear form
     this.toAccount = '';
     this.amount = null;
   }

@@ -1,5 +1,5 @@
 import {Directive, EventEmitter, Input, Output} from '@angular/core';
-import {Transaction} from '../../models/transaction';
+import {Transaction} from '../models/transaction';
 
 export type SortColumn = keyof Transaction | '';
 export type SortDirection = 'asc' | 'desc' | '';

@@ -13,9 +13,8 @@ export class ModalComponent implements OnInit {
   @Input() accountName;
   @Input() toAccount;
   @Input() amount;
-  activeModal: NgbActiveModal;
 
-  constructor() {
+  constructor(public activeModal: NgbActiveModal) {
   }
 
 
