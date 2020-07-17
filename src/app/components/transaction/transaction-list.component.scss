@@ -62,4 +62,18 @@ tr {
     font-size: $font-size * 0.7;
     line-height: $font-size * 0.7;
   }
+
+  .category-code-col{
+    width:5px;
+    padding: 0;
+  }
+
+  .merchant-logo-col{
+    img {
+      width: 30px;
+    }
+    @media (max-width: 768px) {
+      padding: 0.75rem 0;
+    }
+  }
 }

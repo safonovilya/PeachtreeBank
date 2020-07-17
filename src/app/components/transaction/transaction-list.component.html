@@ -32,14 +32,14 @@
 <table class="table">
   <tbody>
   <tr *ngFor="let transaction of transactionService.transactions$ | async" class="border">
-    <td width="5" class="p-0" style="background-color: {{ transaction.categoryCode }}">&nbsp;</td>
+    <td class="category-code-col" style="background-color: {{ transaction.categoryCode }}">&nbsp;</td>
     <td>{{ transaction.transactionDate | date: 'MMM. dd' }}</td>
-    <td><img width="30" src="{{ transaction.merchantLogo }}" alt=""></td>
+    <td class="merchant-logo-col"><img src="{{ transaction.merchantLogo }}" alt=""></td>
     <td>
       <span class="merchant">{{ transaction.merchant }}</span>
       <span class="transaction-class">{{ transaction.transactionType }}</span>
     </td>
-    <td>-{{ transaction.amount | currency }}</td>
+    <td class="text-nowrap">-{{ transaction.amount | currency }}</td>
   </tr>
   </tbody>
 </table>
